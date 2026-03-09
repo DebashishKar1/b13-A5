@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Issues Tracker - Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@latest/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles if needed */
+        body { background-color: #f9fafb; }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen">
+    <div class="card w-96 bg-base-100 shadow-xl">
+        <div class="card-body items-center text-center">
+            <!-- Logo: Using GitHub Octocat placeholder -->
+            <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub Logo" class="w-16 h-16 mb-4">
+            <h2 class="card-title text-2xl">GitHub Issues Tracker</h2>
+            <p class="text-sm text-gray-500 mb-6">Sign in to manage your issues</p>
+            
+            <!-- Username Input -->
+            <div class="form-control w-full max-w-xs">
+                <label class="label">
+                    <span class="label-text">Username</span>
+                </label>
+                <input type="text" id="username" placeholder="Enter Username" class="input input-bordered w-full max-w-xs" value="admin" />
+            </div>
+            
+            <!-- Password Input -->
+            <div class="form-control w-full max-w-xs mt-4">
+                <label class="label">
+                    <span class="label-text">Password</span>
+                </label>
+                <input type="password" id="password" placeholder="Enter Password" class="input input-bordered w-full max-w-xs" value="admin123" />
+            </div>
+            
+            <!-- Sign In Button -->
+            <button id="login-btn" class="btn btn-primary w-full max-w-xs mt-6">Sign In</button>
+            
+            <div class="divider">OR</div>
+            
+            <!-- Demo Credentials -->
+            <div class="bg-gray-100 p-4 rounded-md w-full max-w-xs">
+                <p class="text-sm">Demo Credentials:</p>
+                <p class="text-sm font-bold">Username: admin</p>
+                <p class="text-sm font-bold">Password: admin123</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+    </body>
+</html>

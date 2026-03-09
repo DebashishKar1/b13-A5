@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Issues Tracker - Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@latest/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom border colors */
+        .open-border { border-top: 4px solid green; }
+        .closed-border { border-top: 4px solid purple; }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <!-- Navbar -->
+    <div class="navbar bg-base-100 shadow-md">
+        <div class="flex-1">
+            <a class="btn btn-ghost normal-case text-xl">
+                <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="Logo" class="w-8 h-8 mr-2">
+                GitHub Issues Tracker
+            </a>
+        </div>
+        <div class="flex-none">
+            <div class="form-control">
+                <input type="text" id="search-input" placeholder="Search issues..." class="input input-bordered" />
+            </div>
+            <button id="search-btn" class="btn btn-primary ml-2">Search</button>
+        </div>
+    </div>
+
+    <!-- Tab Section -->
+    <div class="container mx-auto p-4">
+        <div class="tabs tabs-boxed mb-4">
+            <a id="tab-all" class="tab tab-active">All</a>
+            <a id="tab-open" class="tab">Open</a>
+            <a id="tab-closed" class="tab">Closed</a>
+        </div>
+
+        <!-- Issue Stats -->
+        <div class="flex justify-between mb-4">
+            <div class="flex items-center">
+                <span class="mr-2">📝</span>
+                <span id="issue-count">0 issues</span>
+            </div>
+            <div>
+                <span class="badge badge-success mr-2">Open</span>
+                <span class="badge badge-secondary">Closed</span>
+            </div>
+        </div>
+
+        <!-- Loading Spinner -->
+        <div id="loading" class="flex justify-center items-center hidden">
+            <div class="loading loading-spinner loading-lg"></div>
+        </div>
+
+        <!-- Issues Grid -->
+        <div id="issues-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4"></div>
+    </div>
+
+    <!-- Modal -->
+    <dialog id="issue-modal" class="modal">
+        <div class="modal-box">
+            <h3 class="font-bold text-lg" id="modal-title"></h3>
+            <p id="modal-desc" class="py-4"></p>
+            <p><strong>Status:</strong> <span id="modal-status"></span></p>
+            <p><strong>Author:</strong> <span id="modal-author"></span></p>
+            <p><strong>Priority:</strong> <span id="modal-priority"></span></p>
+            <p><strong>Label:</strong> <span id="modal-label"></span></p>
+            <p><strong>Created At:</strong> <span id="modal-created"></span></p>
+            <div class="modal-action">
+                <form method="dialog">
+                    <button class="btn">Close</button>
+                </form>
+            </div>
+        </div>
+    </dialog>
+
+    <script src="login.js"></script>
+</body>
+</html>
